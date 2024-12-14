@@ -1,17 +1,13 @@
 package conta.model;
 
-public class Conta {
+//classe abstrata => base para criar outras classes
+public abstract class Conta {
 	// Atributos = variaveis
 	private int numero;
 	private int agencia;
 	private int tipo;
 	private String titular;
 	private float saldo;
-
-	/*
-	 * 3 modificadores de acesso Private - celular pessoal protected -telefone
-	 * residencial publico - orelhão(todo mundo pode usar) default -
-	 */
 
 	// metodo especial - metodo construtor
 	public Conta(int numero, int agencia, int tipo, String titular, float saldo) {
@@ -27,8 +23,6 @@ public class Conta {
 		this.titular = titular;
 		this.saldo = saldo;
 	}
-
-	// Metodos
 
 	// metodos de acesso
 	// get - pegar
@@ -72,12 +66,6 @@ public class Conta {
 	public void setSaldo(float saldo) {
 		this.saldo = saldo;
 	}
-	
-	
-	
-	
-	
-	
 
 	public boolean sacar(float valor) {
 		if (this.getSaldo() < valor) {
@@ -87,24 +75,10 @@ public class Conta {
 		this.setSaldo(this.getSaldo() - valor);
 		return true;
 	}
-	
-	
-	
-	
-	
-	
 
 	public void depositar(float valor) {
 		this.setSaldo(this.getSaldo() + valor);
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 
 	public void visualizar() {
 		String tipo = "";
